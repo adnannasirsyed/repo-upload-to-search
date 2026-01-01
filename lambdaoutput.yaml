@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  uploadtosearch:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.handler
+      Runtime: python3.11
+      CodeUri: s3://artifacts-bucket-915028409560/1361d41f3c277a6135ae7b3d7a6c9f35
+      Description: ''
+      MemorySize: 512
+      Timeout: 900
+      Role: arn:aws:iam::915028409560:role/LambdaSearchRole
+      Environment:
+        Variables:
+          region: us-east-1
+          host: https://search-search-engine-9150-4ej5lebzrnpphg5liothqgpoqm.us-east-1.es.amazonaws.com
