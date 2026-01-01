@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  uploadtosearch:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.handler
+      Runtime: python3.9
+      CodeUri: .
+      Description: ''
+      MemorySize: 512
+      Timeout: 900
+      # Role: 'arn:aws:iam::844028273225:role/lambda_s3'
+      Environment:
+  	Variables:
+    		# 1. SET YOUR REGION EXACTLY AS BELOW
+    		region: us-east-1
+    		# 2. PASTE YOUR OPENSEARCH URL HERE LATER (after Phase 1)
+    		host: 'https://search-search-engine-9150-4ej5lebzrnpphg5liothqgpoqm.us-east-1.es.amazonaws.com'
